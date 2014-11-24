@@ -1,0 +1,454 @@
+/*CSS for insertStudent and insertAdviser*/
+.form_fields{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	margin: auto;
+	width:100%px;
+	position:relative;
+	display:block;
+	padding: 0px 10px 10px 50px;
+	clear:both;
+}
+
+.form_fields label{
+	background-image:url(../images/others/label_bg.gif);
+	background-repeat:no-repeat;
+	background-position:left;
+
+	color:#646729;
+	font-size:90%;
+	font-weight:bold;
+	
+	border-width: 0px;
+	
+	display:block;
+	float:left;
+	width:140px;
+	height:24px;
+	text-align:left;
+	margin:4px 0px 0px 0px;
+	padding:10px 0px 0px 8px;
+	clear:left;
+}
+
+.form_fields textarea:focus {
+        border-color : red;
+}
+.error{
+    color: red;
+}
+
+.form_fields input{
+	background-color:#FFFFFF;
+	
+	width:220px;
+	margin:9px 0px 0px 0px;
+	
+	border-width: 1px;
+	border-style: solid solid solid solid;
+	border-color:#bbbf58;
+	
+	color:#323415;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:140%;
+	display:block;
+	float:left;
+	
+	padding:1px 2px;
+}
+
+.form_fields input:focus {
+        border-color : red;
+}
+
+.form_fields textarea{
+        background-color:#FFFFFF;
+        margin:9px 0px 0px 0px;
+        border-width: 1px;
+        border-style: solid solid solid solid;
+	border-color:#bbbf58;
+	
+	color:#323415;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:140%;
+	display:block;
+	float:left;
+	
+	padding:1px 2px;
+}
+
+.deptSelect{
+	background-color:#FFFFFF;
+	
+	width:220px;
+	margin:9px 0px 0px 0px;
+	
+	border-width: 1px;
+	border-style: solid solid solid solid;
+	border-color:#bbbf58;
+	
+	color:#323415;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:130%;
+	display:block;
+	float:left;
+	
+	padding:1px 2px;
+}
+
+.form_fields input[type=file]{
+    margin: 8px 0px 0px 0px;
+}
+.sexybutton {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+	padding: 0;
+	font: bold 13px "Helvetica Neue", Helvetica, Arial, clean, sans-serif !important;
+	text-decoration: none !important;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.20);
+	background: none;
+	border: none;
+	white-space: nowrap;
+	cursor: pointer;
+	user-select: none;
+	-moz-user-select: none;
+	
+	/* Fix extra width padding in IE */
+	_width: 0;
+	overflow: visible;
+}
+
+.sexybutton span {
+	display: block;						/* Prevents :active from working in IE--oh well! */
+	height: 24px;
+	padding-right: 12px;
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+
+.sexybutton span span {
+	padding-right: 0;
+	padding-left: 12px;
+	line-height: 24px;
+	background-position: left top;
+}
+
+.sexybutton span span span {
+	padding-left: 21px;
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position: left center;
+	/* IE6 still requires a PNG transparency fix */ 
+	/* _background-image: none;		Or just hide icons from the undeserving IE6 */
+	/* _padding-left: 0;					Or just hide icons from the undeserving IE6 */
+}
+
+.sexybutton span span span.after {
+	padding-left: 0px;
+	padding-right: 21px;
+	background-position: right center;
+	/* IE6 still requires a PNG transparency fix */ 
+	/* _padding-right: 0;					Or just hide icons from the undeserving IE6 */
+}
+
+.sexybutton.sexyicononly span span span {
+	padding-left: 16px;
+}
+
+.sexybutton.sexyicononly span span span.after {
+	padding-left: 0px;
+	padding-right: 16px;
+}
+
+.sexybutton[disabled],
+.sexybutton[disabled]:hover,
+.sexybutton[disabled]:focus,
+.sexybutton[disabled]:active,
+.sexybutton.disabled,
+.sexybutton.disabled:hover,
+.sexybutton.disabled:focus,
+.sexybutton.disabled:active {
+	color: #333 !important;
+	cursor: inherit;
+	text-shadow: none; 
+	opacity: 0.33;
+}
+
+.sexybutton:hover span,
+.sexybutton:focus span {
+	background-position: 100% -24px;
+}
+
+.sexybutton:hover span span,
+.sexybutton:focus span span {
+	background-position: 0% -24px;
+}
+
+.sexybutton:active span {
+	background-position: 100% -48px;
+}
+
+.sexybutton:active span span {
+	background-position: 0% -48px;
+}
+
+.sexybutton[disabled] span,
+.sexybutton.disabled span {
+	background-position: 100% -72px;
+}
+
+.sexybutton[disabled] span span,
+.sexybutton.disabled span span {
+	background-position: 0% -72px;
+}
+
+.sexybutton:hover span span span,
+.sexybutton:focus span span span,
+.sexybutton:active span span span,
+.sexybutton[disabled] span span span,
+.sexybutton.disabled span span span {
+	background-position: left center;
+}
+
+.sexybutton:hover span span span.after,
+.sexybutton:focus span span span.after,
+.sexybutton:active span span span.after,
+.sexybutton[disabled] span span span.after,
+.sexybutton.disabled span span span.after {
+	background-position: right center;
+}
+
+.sexybutton img {
+	margin-right: 5px;
+	vertical-align: text-top;
+	/* IE6 Hack */
+	_margin-top: 4px;
+	_vertical-align: text-bottom;
+	/* IE6 still requires a PNG transparency fix */ 
+	/* _display: none;		Or just hide icons from the undeserving IE6 */
+}
+
+.sexybutton img.after {
+	margin-right: 0;
+	margin-left: 5px;
+	/* IE6 still requires a PNG transparency fix */ 
+	/* _margin-left: 0;		Or just hide icons from the undeserving IE6 */
+}
+
+.sexybutton.sexymedium	{ font-size: 15px !important; }
+.sexybutton.sexylarge	{ font-size: 18px !important; }
+
+
+/*
+ * Button Skins
+ * 
+ * .PNG background images with alpha transparency are also supplied if you'd rather use them instead of the 
+ * default .GIF images. (Just beware of IE6's lack of support.) 
+ * 
+ * Additional skins can be added below. The images/skins/ButtonTemplate.psd can be used to create new skins.
+ * Prefix the skin name with "sexy" to avoid any potential conflicts with other class names. 
+ */
+
+/* Silver Button Skin (the default skin) */
+
+.sexybutton,
+.sexybutton.sexysilver {
+	color: #666 !important;
+}
+	
+.sexybutton:hover,
+.sexybutton:focus,
+.sexybutton.sexysilver:hover,
+.sexybutton.sexysilver:focus {
+	color: #333 !important;
+}
+	
+.sexybutton span,
+.sexybutton.sexysilver span {
+	background-image: url(../images/others/yellow/button_right.png);
+}
+
+.sexybutton span span,
+.sexybutton.sexysilver span span {
+	background-image: url(../images/others/yellow/button_left.png);
+}
+
+
+
+/* Simple button colors */
+.sexybutton.sexysimple			{ background-color: #333; }		/* Default */
+.sexybutton.sexysimple.sexyblack	{ background-color: #333; }
+.sexybutton.sexysimple.sexyred		{ background-color: #a90118; }
+.sexybutton.sexysimple.sexyorange	{ background-color: #ff8a00; }
+.sexybutton.sexysimple.sexyyellow	{ background-color: #ffb515; }
+.sexybutton.sexysimple.sexygreen	{ background-color: #59a901; }
+.sexybutton.sexysimple.sexyblue		{ background-color: #015ea9; }
+.sexybutton.sexysimple.sexyteal		{ background-color: #2daebf; }
+.sexybutton.sexysimple.sexymagenta	{ background-color: #a9014b; }
+.sexybutton.sexysimple.sexypurple	{ background-color: #9d01a9; }
+
+/* Simple button sizes */
+.sexybutton.sexysimple.sexysmall          { padding: 4px 7px 5px; font-size: 10px !important; }
+.sexybutton.sexysimple.sexysmall:active   { padding: 5px 7px 4px; }
+.sexybutton.sexysimple                    { /* default */ }
+.sexybutton.sexysimple:active             { padding: 6px 10px 4px; }
+.sexybutton.sexysimple.sexymedium         { /* default */ }
+.sexybutton.sexysimple.sexymedium:active  { padding: 6px 10px 4px; }
+.sexybutton.sexysimple.sexylarge          { padding: 8px 14px 8px; font-size: 14px !important; }
+.sexybutton.sexysimple.sexylarge:active   { padding: 9px 14px 7px; }
+.sexybutton.sexysimple.sexyxl             { padding: 8px 14px 8px; font-size: 16px !important; }
+.sexybutton.sexysimple.sexyxl:active      { padding: 9px 14px 7px; }
+.sexybutton.sexysimple.sexyxxl            { padding: 8px 14px 8px; font-size: 20px !important; }
+.sexybutton.sexysimple.sexyxxl:active     { padding: 9px 14px 7px; }
+.sexybutton.sexysimple.sexyxxxl           { padding: 8px 14px 8px; font-size: 26px !important; }
+.sexybutton.sexysimple.sexyxxxl:active    { padding: 9px 14px 7px; }
+
+.sexybutton.sexysimple.sexysmall[disabled]:active,
+.sexybutton.sexysimple.sexysmall.disabled:active   	{ padding: 4px 7px 5px; }
+.sexybutton.sexysimple[disabled]:active,
+.sexybutton.sexysimple.disabled:active 	            { padding: 5px 10px 5px; }
+.sexybutton.sexysimple.sexymedium[disabled]:active,
+.sexybutton.sexysimple.sexymedium.disabled:active 		{ padding: 6px 10px 4px; }
+.sexybutton.sexysimple.sexylarge[disabled]:active,
+.sexybutton.sexysimple.sexylarge.disabled:active   	{ padding: 8px 14px 8px; }
+.sexybutton.sexysimple.sexyxl[disabled]:active,
+.sexybutton.sexysimple.sexyxl.disabled:active	      { padding: 8px 14px 8px; }
+.sexybutton.sexysimple.sexyxxl[disabled]:active,
+.sexybutton.sexysimple.sexyxxl.disabled:active 		   { padding: 8px 14px 8px; }
+.sexybutton.sexysimple.sexyxxxl[disabled]:active,
+.sexybutton.sexysimple.sexyxxxl.disabled:active    	{ padding: 8px 14px 8px; }
+
+
+/*
+ * Icon Definitions
+ */
+
+/* Silk Icons - http://www.famfamfam.com/lab/icons/silk/ */
+/* (Obviously not all Silk icons are defined here. Feel free to define any other icons that you may need.) */
+
+.sexybutton span.ok			{ background-image: url(../images/others/tick.png) !important; }
+.sexybutton span.cancel			{ background-image: url(../images/others/cross.png) !important; }
+
+
+/* CSS for downloadIdPassword */
+input.submit, a.submit{
+	display: block;
+	float:right;
+	width:104px; height:29px;
+	background:url(../images/others/blue.png) no-repeat;
+	color: white;
+	/*text-transform: uppercase;*/
+        text-align: center;
+	text-decoration: none;
+	margin-left: 5px;
+	border:0px;
+}
+input.submit:hover, a.submit:hover{
+    background:url(../images/others/bluehigh.png) no-repeat;
+    color: white;
+}
+input.reset{
+	display: block;
+	float:right;
+	width:104px; height:29px;
+	background:url(../images/others/red.png) no-repeat;
+	color: white;
+	/*text-transform: uppercase;*/
+	text-decoration: none;
+	margin-left: 5px;
+	border:0px;
+}
+input.reset:hover{
+    background:url(../images/others/redhigh.png) no-repeat;
+    color: white;
+}
+
+table{
+    font-size:18px;
+    font-weight: bold;
+    margin: auto;
+}
+table td{
+    padding:2px 5px;
+}
+
+/*CSS for insertDepartment*/
+.insert_form_fields{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+		
+	margin: auto;
+        border-left: 30px;
+	width:100%px;
+	position:relative;
+	display:block;
+	padding: 0px 10px 10px 10px;
+	clear:both;
+}
+
+.insert_form_fields label{
+	background-image:url(../images/others/insert_label_bg.gif);
+	background-repeat:no-repeat;
+	background-position:left;
+
+	color:#646729;
+	font-size:90%;
+	font-weight:bold;
+	
+	border-width: 0px;
+	
+	display:block;
+	float:left;
+	width:180px;
+	height:24px;
+	text-align:left;
+	margin:4px 0px 0px 0px;
+	padding:10px 0px 0px 8px;
+	clear:left;
+}
+
+.insert_form_fields textarea:focus {
+        border-color : red;
+}
+.insert_form_fields input{
+	background-color:#FFFFFF;
+	
+	width:195px;
+	margin:9px 0px 0px 0px;
+	
+	border-width: 1px;
+	border-style: solid solid solid solid;
+	border-color:#bbbf58;
+	
+	color:#323415;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:140%;
+	display:block;
+	float:left;
+	
+	padding:1px 2px;
+}
+
+.insert_form_fields input:focus {
+        border-color : red;
+}
+
+.Select{
+	background-color:#FFFFFF;
+	
+	width:200px;
+	margin:9px 0px 0px 0px;
+	
+	border-width: 1px;
+	border-style: solid solid solid solid;
+	border-color:#bbbf58;
+	
+	color:#323415;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:130%;
+	display:block;
+	float:left;
+	
+	padding:1px 2px;
+}
