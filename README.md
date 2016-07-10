@@ -1,4 +1,6 @@
-# OnlineRegistrationSystem
+#Course Registraton System
+#(With Result Processing)
+
 Course Registraton System (With Result Processing)
 
 1st import database which in(database directory).
