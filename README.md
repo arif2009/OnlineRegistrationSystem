@@ -53,4 +53,25 @@ Password:123456 </br>
 ![alt text](http://i.imgur.com/9ZTODuB.jpg "Login form")
 
 When a user (teacher, register, student) login their ID & Password then it redirect their individual
-destination (which decided by their ID)
+destination (which is decided by their ID) .
+
+##### Register Section
+*Starting Form :* When authority (register) login then, he'll see the number of all advisers (separated by department) and students (separated by department) like this :
+
+![alt text](http://i.imgur.com/hpkKyx0.jpg "Register summary")
+
+Here register section can insert a new student, teacher and also can be select adviser for a student or a group of student . When register section insert student and teacher, their password will be auto generated . After inserting information this section can print out password as a pdf file.
+
+Student insertion forms and pdf files look like this :
+
+*Student Insertion Form :*
+
+![alt text](http://i.imgur.com/UDfID1O.jpg "Student Insertion Form")
+
+*Download inrerface form :*
+
+![alt text](http://i.imgur.com/9fZNYyE.jpg "Download inrerface form")
+
+*Downloaded pdf file :*
+
+![alt text](http://i.imgur.com/TbReSIV.jpg "Downloaded pdf file")
