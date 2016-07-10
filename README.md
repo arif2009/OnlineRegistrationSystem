@@ -75,3 +75,45 @@ Student insertion forms and pdf files look like this :
 *Downloaded pdf file :*
 
 ![alt text](http://i.imgur.com/TbReSIV.jpg "Downloaded pdf file")
+
+##### Adviser Section
+
+*Starting Form :* When adviser login then he'll see all requested student with their registration status like this :
+
+![alt text](http://i.imgur.com/SjgbEt1.jpg "Adviser startup")
+
+Adviser can check their registration form(by clicking View Details) after checking he can accept or deny.
+
+*View Details Form :*
+
+![alt text](http://i.imgur.com/mqPx30r.jpg "View Details Form")
+
+*Insert or Edit form :* A teacher can insert or edit a student mark by selecting subject criteria like this :
+
+![alt text](http://i.imgur.com/e4eeeqM.jpg "Insert or Edit form for teacher")
+
+##### Students Section
+
+*Starting Form :* When a student login then he'll see notice that provided by Register Section :
+
+![alt text](http://i.imgur.com/qpWif8I.jpg "Students startup form")
+
+*Registration Form :* Student can registered his current semester subject ,this subject will show automatically and if he failed any subject of previous semester, this will show automatically like this :
+
+![alt text](http://i.imgur.com/ZqRJBeu.jpg "Registration Form")
+
+*Download Result Form :* When publish result student can download his own result sheet as pdf file, by selecting required year and semester.
+
+*Download inrerface form :*
+
+![alt text](http://i.imgur.com/gE91zIn.jpg "Download inrerface form")
+
+*Pdf result sheet :*
+
+![alt text](http://i.imgur.com/8ZPBnPU.gif "Pdf result sheet")
+
+##### License
+
+This application is released under the [MIT](http://www.opensource.org/licenses/MIT) License.
+
+Copyright (c) 2014 [Arifur Rahman.](http://arifur-rahman-sazal.blogspot.com/)
