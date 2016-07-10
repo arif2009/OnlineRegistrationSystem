@@ -12,7 +12,9 @@ if XAMPP no need to change.
 Here three types of user>
 
 If Register section:
+
 User Id:R12345
+
 Password:123456
 
 If Adviser:
