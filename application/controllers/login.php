@@ -7,7 +7,7 @@ class Login extends CI_Controller {
         $this->load->model('Register/dataViewRM');
         $this->load->model('Adviser/dataViewAM');
         $this->load->library('MyTemplate');
-        $this->output->enable_profiler(TRUE);
+        //$this->output->enable_profiler(TRUE);
     }
 
     public function index($error = ''){
