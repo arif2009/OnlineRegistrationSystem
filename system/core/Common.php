@@ -5,8 +5,9 @@
  * An open source application development framework for PHP 5.1.6 or newer
  *
  * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
+ * @author		EllisLab Dev Team
+ * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
@@ -23,7 +24,7 @@
  * @package		CodeIgniter
  * @subpackage	codeigniter
  * @category	Common Functions
- * @author		ExpressionEngine Dev Team
+ * @author		EllisLab Dev Team
  * @link		http://codeigniter.com/user_guide/
  */
 
@@ -31,9 +32,6 @@
 
 /**
 * Determines if the current version of PHP is greater then the supplied value
-*
-* Since there are a few places where we conditionally test for PHP > 5
-* we'll set a static variable.
 *
 * @access	public
 * @param	string
@@ -132,9 +130,9 @@ if ( ! function_exists('load_class'))
 
 		$name = FALSE;
 
-		// Look for the class first in the native system/libraries folder
-		// thenin the local application/libraries folder
-		foreach (array(BASEPATH, APPPATH) as $path)
+		// Look for the class first in the local application/libraries folder
+		// then in the native system/libraries folder
+		foreach (array(APPPATH, BASEPATH) as $path)
 		{
 			if (file_exists($path.$directory.'/'.$class.'.php'))
 			{
@@ -187,7 +185,7 @@ if ( ! function_exists('load_class'))
 */
 if ( ! function_exists('is_loaded'))
 {
-	function is_loaded($class = '')
+	function &is_loaded($class = '')
 	{
 		static $_is_loaded = array();
 
@@ -254,8 +252,6 @@ if ( ! function_exists('get_config'))
 			}
 		}
 
-		//return $_config[0] =& $config;
-		
 		$_config[0] =& $config;
 		return $_config[0];
 	}
@@ -473,9 +469,6 @@ if ( ! function_exists('_exception_handler'))
 	{
 		 // We don't bother with "strict" notices since they tend to fill up
 		 // the log file with excess information that isn't normally very helpful.
-		 // For example, if you are running PHP 5 and you use version 4 style
-		 // class functions (without prefixes like "public", "private", etc.)
-		 // you'll get notices telling you that these have been deprecated.
 		if ($severity == E_STRICT)
 		{
 			return;
@@ -536,6 +529,30 @@ if ( ! function_exists('remove_invisible_characters'))
 		while ($count);
 
 		return $str;
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+* Returns HTML escaped variable
+*
+* @access	public
+* @param	mixed
+* @return	mixed
+*/
+if ( ! function_exists('html_escape'))
+{
+	function html_escape($var)
+	{
+		if (is_array($var))
+		{
+			return array_map('html_escape', $var);
+		}
+		else
+		{
+			return htmlspecialchars($var, ENT_QUOTES, config_item('charset'));
+		}
 	}
 }
 

@@ -5,8 +5,9 @@
  * An open source application development framework for PHP 5.1.6 or newer
  *
  * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
+ * @author		EllisLab Dev Team
+ * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
@@ -23,13 +24,28 @@
  * @package		CodeIgniter
  * @subpackage	Libraries
  * @category	Libraries
- * @author		ExpressionEngine Dev Team
+ * @author		EllisLab Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/config.html
  */
 class CI_Config {
 
+	/**
+	 * List of all loaded config values
+	 *
+	 * @var array
+	 */
 	var $config = array();
+	/**
+	 * List of all loaded config files
+	 *
+	 * @var array
+	 */
 	var $is_loaded = array();
+	/**
+	 * List of paths to search when trying to load a config file
+	 *
+	 * @var array
+	 */
 	var $_config_paths = array(APPPATH);
 
 	/**
@@ -51,11 +67,13 @@ class CI_Config {
 		// Set the base_url automatically if none was provided
 		if ($this->config['base_url'] == '')
 		{
-			if (isset($_SERVER['HTTP_HOST']))
+			// The regular expression is only a basic validation for a valid "Host" header.
+			// It's not exhaustive, only checks for valid characters.
+			if (isset($_SERVER['HTTP_HOST']) && preg_match('/^((\[[0-9a-f:]+\])|(\d{1,3}(\.\d{1,3}){3})|[a-z0-9\-\.]+)(:\d+)?$/i', $_SERVER['HTTP_HOST']))
 			{
-				$base_url = isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) !== 'off' ? 'https' : 'http';
+				$base_url = (empty($_SERVER['HTTPS']) OR strtolower($_SERVER['HTTPS']) === 'off') ? 'http' : 'https';
 				$base_url .= '://'. $_SERVER['HTTP_HOST'];
-				$base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+				$base_url .= substr($_SERVER['SCRIPT_NAME'], 0, strpos($_SERVER['SCRIPT_NAME'], basename($_SERVER['SCRIPT_FILENAME'])));
 			}
 
 			else
@@ -84,12 +102,12 @@ class CI_Config {
 		$found = FALSE;
 		$loaded = FALSE;
 
+		$check_locations = defined('ENVIRONMENT')
+			? array(ENVIRONMENT.'/'.$file, $file)
+			: array($file);
+
 		foreach ($this->_config_paths as $path)
 		{
-			$check_locations = defined('ENVIRONMENT')
-				? array(ENVIRONMENT.'/'.$file, $file)
-				: array($file);
-
 			foreach ($check_locations as $location)
 			{
 				$file_path = $path.'config/'.$location.'.php';
@@ -153,7 +171,7 @@ class CI_Config {
 			{
 				return FALSE;
 			}
-			show_error('The configuration file '.$file.'.php'.' does not exist.');
+			show_error('The configuration file '.$file.'.php does not exist.');
 		}
 
 		return TRUE;
@@ -251,27 +269,27 @@ class CI_Config {
 			return $this->slash_item('base_url').$this->item('index_page').'?'.$this->_uri_string($uri);
 		}
 	}
-	
+
 	// -------------------------------------------------------------
-	
+
 	/**
 	 * Base URL
 	 * Returns base_url [. uri_string]
-	 * 
+	 *
 	 * @access public
 	 * @param string $uri
 	 * @return string
 	 */
 	function base_url($uri = '')
 	{
-		return $this->slash_item('base_url').ltrim($this->_uri_string($uri),'/');
+		return $this->slash_item('base_url').ltrim($this->_uri_string($uri), '/');
 	}
-	
+
 	// -------------------------------------------------------------
-	
+
 	/**
 	 * Build URI string for use in Config::site_url() and Config::base_url()
-	 * 
+	 *
 	 * @access protected
 	 * @param  $uri
 	 * @return string
@@ -305,7 +323,7 @@ class CI_Config {
 	}
 
 	// --------------------------------------------------------------------
-	
+
 	/**
 	 * System URL
 	 *
