@@ -5,8 +5,9 @@
  * An open source application development framework for PHP 5.1.6 or newer
  *
  * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
+ * @author		EllisLab Dev Team
+ * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
@@ -23,21 +24,23 @@
  * @package		CodeIgniter
  * @subpackage	codeigniter
  * @category	Front-controller
- * @author		ExpressionEngine Dev Team
+ * @author		EllisLab Dev Team
  * @link		http://codeigniter.com/user_guide/
  */
 
-/*
- * ------------------------------------------------------
- *  Define the CodeIgniter Version
- * ------------------------------------------------------
+/**
+ * CodeIgniter Version
+ *
+ * @var string
+ *
  */
-	define('CI_VERSION', '2.0.3');
+	define('CI_VERSION', '2.2.6');
 
-/*
- * ------------------------------------------------------
- *  Define the CodeIgniter Branch (Core = TRUE, Reactor = FALSE)
- * ------------------------------------------------------
+/**
+ * CodeIgniter Branch (Core = TRUE, Reactor = FALSE)
+ *
+ * @var boolean
+ *
  */
 	define('CI_CORE', FALSE);
 
@@ -267,7 +270,25 @@
 		OR in_array(strtolower($method), array_map('strtolower', get_class_methods('CI_Controller')))
 		)
 	{
-		show_404("{$class}/{$method}");
+		if ( ! empty($RTR->routes['404_override']))
+		{
+			$x = explode('/', $RTR->routes['404_override']);
+			$class = $x[0];
+			$method = (isset($x[1]) ? $x[1] : 'index');
+			if ( ! class_exists($class))
+			{
+				if ( ! file_exists(APPPATH.'controllers/'.$class.'.php'))
+				{
+					show_404("{$class}/{$method}");
+				}
+
+				include_once(APPPATH.'controllers/'.$class.'.php');
+			}
+		}
+		else
+		{
+			show_404("{$class}/{$method}");
+		}
 	}
 
 /*

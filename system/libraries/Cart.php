@@ -5,8 +5,9 @@
  * An open source application development framework for PHP 5.1.6 or newer
  *
  * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2006 - 2011, EllisLab, Inc.
+ * @author		EllisLab Dev Team
+ * @copyright		Copyright (c) 2006 - 2014, EllisLab, Inc.
+ * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
@@ -21,7 +22,7 @@
  * @package		CodeIgniter
  * @subpackage	Libraries
  * @category	Shopping Cart
- * @author		ExpressionEngine Dev Team
+ * @author		EllisLab Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/cart.html
  */
 class CI_Cart {
@@ -99,7 +100,7 @@ class CI_Cart {
 		$save_cart = FALSE;
 		if (isset($items['id']))
 		{
-			if ($this->_insert($items) == TRUE)
+			if (($rowid = $this->_insert($items)))
 			{
 				$save_cart = TRUE;
 			}
@@ -110,7 +111,7 @@ class CI_Cart {
 			{
 				if (is_array($val) AND isset($val['id']))
 				{
-					if ($this->_insert($val) == TRUE)
+					if ($this->_insert($val))
 					{
 						$save_cart = TRUE;
 					}
@@ -122,7 +123,7 @@ class CI_Cart {
 		if ($save_cart == TRUE)
 		{
 			$this->_save_cart();
-			return TRUE;
+			return isset($rowid) ? $rowid : TRUE;
 		}
 
 		return FALSE;
@@ -244,7 +245,7 @@ class CI_Cart {
 		}
 
 		// Woot!
-		return TRUE;
+		return $rowid;
 	}
 
 	// --------------------------------------------------------------------
@@ -546,7 +547,6 @@ class CI_Cart {
 
 
 }
-// END Cart Class
 
 /* End of file Cart.php */
 /* Location: ./system/libraries/Cart.php */
