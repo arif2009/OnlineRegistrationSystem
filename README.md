@@ -3,7 +3,7 @@
 
 ##### Development Tools & Technology :
 ---
-* [CodeIgniter 2.x Framework](https://www.codeigniter.com/)
+* [CodeIgniter 2.2.6 Framework](https://www.codeigniter.com/)
 * [MySQL 5 +](https://www.mysql.com/)
 * [CSS(960 Framework)](http://960.gs/)
 * [AJAX & JQuery](https://jquery.com/)
