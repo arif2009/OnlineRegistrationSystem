@@ -18,11 +18,11 @@ class MyTemplate{
     
     function Footer(){
         $footer = '<p>';
-        $footer .= anchor('http://www.programmingsoln.blogspot.com', 'Different Programming Tips', array('target' => '_blunk'));
+        $footer .= anchor('http://arifur-rahman-sazal.blogspot.com', 'Different Programming Tips', array('target' => '_blunk'));
         $footer .= ' | ';
         $footer .= anchor('http://www.duet.ac.bd', 'DUET', array('target' => '_blunk'));
         $footer .= ' | ';
-        $footer .= anchor('http://www.arif.linksstation.info', 'About Me', array('target' => '_blunk'));
+        $footer .= anchor('http://arifur-rahman-sazal.blogspot.com/p/blog-page_9.html', 'About Me', array('target' => '_blunk'));
         $footer .= '</p>';
         return($footer);
     }
