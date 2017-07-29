@@ -46,22 +46,28 @@
                     <tr><td style="float: left">Subject List :</td><td style="float: right"><?=$receiveNo?></td></tr>
                     <?php
                     $checked = FALSE;
-                     foreach ($requiredSubject as $row) {
-                         $chkProperties = array( 
-                                'name'    => $row['SubjectCode'],
-                                'id'      => 'chkBox',
-                                'value'   => "'{$stdId}','{$row['SubjectCode']}','{$row['SubjectOfYear']}','{$row['SubjectOfSemister']}',{$row['Cardit']},'requested'",
-                                'checked' => $checked
-                          );
-                         $chkAttribute = $row['SubjectTitle'].' (Cardit:'.$row['Cardit']." {$row['SubjectOfYear']}/{$row['SubjectOfSemister']})";
-                         echo '<tr><td>'.form_checkbox($chkProperties).$chkAttribute.'</td></tr>';
-                         
-                         $totalSubjectArray[] = $row['SubjectCode']; 
-                     }
-                     $totalSubject = implode(',', $totalSubjectArray);
-                     
+                    if(!empty($requiredSubject)){
+                         foreach ($requiredSubject as $row) {
+                             $chkProperties = array( 
+                                    'name'    => $row['SubjectCode'],
+                                    'id'      => 'chkBox',
+                                    'value'   => "'{$stdId}','{$row['SubjectCode']}','{$row['SubjectOfYear']}','{$row['SubjectOfSemister']}',{$row['Cardit']},'requested'",
+                                    'checked' => $checked
+                              );
+                             $chkAttribute = $row['SubjectTitle'].' (Cardit:'.$row['Cardit']." {$row['SubjectOfYear']}/{$row['SubjectOfSemister']})";
+                             echo '<tr><td>'.form_checkbox($chkProperties).$chkAttribute.'</td></tr>';
+                             
+                             $totalSubjectArray[] = $row['SubjectCode']; 
+                        }
+
+                        $totalSubject = implode(',', $totalSubjectArray);
+
                      //Hidden field for submit totalSubject as string
                      echo form_hidden('totalSubject', $totalSubject);
+                    }
+                    else{
+                        echo '<tr><td class="error wrap text-centre">NO SUBJECT FOUND</td></tr>';
+                    }
                      
                      $checkAll = array(
                         'name'      => 'btnCheckAll',
