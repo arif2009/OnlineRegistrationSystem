@@ -113,7 +113,10 @@ Adviser can check their registration form(by clicking View Details) after checki
 
 ![alt text](http://i.imgur.com/8ZPBnPU.gif "Pdf result sheet")
 
-##### License
+#### Author
+Arifur Rahman ( arif.rahman2009@gmail.com )
+
+#### License
 
 This application is released under the [MIT](http://www.opensource.org/licenses/MIT) License.
 
