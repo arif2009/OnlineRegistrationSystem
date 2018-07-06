@@ -1,13 +1,13 @@
 ### Course Registration System (With Result Processing)
 ---
-This system is designed according to [DUET](http://www.duet.ac.bd/) (Dhaka University of Engineering and Technology) course registration and result processing system.  It manage the Course Registration at the beginning of semester and process the student result at the end of the semester. Student can show his status, download mark sheet after publishing result and also get notification from the authority. Teachers (adviser) can verify his student’s registration status and can accept or deny after verifying students registration.
+This system is designed according to [DUET](http://www.duet.ac.bd/) (Dhaka University of Engineering and Technology) course registration and result processing system.  It can manage the Course Registration at the beginning of semester and process the student result at the end of the semester. Student can show his status, download mark sheet after publishing result and also get notification from the authority. Teachers (adviser) can verify his student’s registration status and can accept or deny after verifying students registration.
 
 ##### Development Tools & Technology :
 ---
 * [CodeIgniter 2.2.6 Framework](https://www.codeigniter.com/)
 * [MySQL 5 +](https://www.mysql.com/)
 * [CSS(960 Framework)](http://960.gs/)
-* [AJAX & JQuery](https://jquery.com/)
+* [JQuery](https://jquery.com/)
 * [FPDF v1.7](http://fpdf.org/)
 
 ##### Installation
@@ -120,4 +120,4 @@ Arifur Rahman ( arif.rahman2009@gmail.com )
 
 This application is released under the [MIT](http://www.opensource.org/licenses/MIT) License.
 
-Copyright (c) 2014 [Arifur Rahman.](http://arifur-rahman-sazal.blogspot.com/)
+Copyright (c) 2014 [Arifur Rahman.](https://arif2009.github.io/)
