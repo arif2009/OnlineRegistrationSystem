@@ -202,7 +202,7 @@ class DataViewSM extends CI_Model{
         //End gatting student Name
         
         //start gating GPA & CGPA
-        $query = $this->db->select_sum('Cardit * GPA', 'sum')
+        $query = $this->db->select('SUM(Cardit * GPA) AS sum')
                           ->where($array)
                           ->get('marks_info');
         $result = $query->result();

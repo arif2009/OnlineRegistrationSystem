@@ -4,7 +4,7 @@ This system is designed according to [DUET](http://www.duet.ac.bd/) (Dhaka Unive
 
 ##### Development Tools & Technology :
 ---
-* [CodeIgniter 2.2.6 Framework](https://www.codeigniter.com/)
+* [CodeIgniter 3.1.10 Framework](https://www.codeigniter.com/)
 * [MySQL 5 +](https://www.mysql.com/)
 * [CSS(960 Framework)](http://960.gs/)
 * [JQuery](https://jquery.com/)
