@@ -101,7 +101,7 @@ Adviser can check their registration form(by clicking View Details) after checki
 
 *Registration Form :* Student can registered his current semester subject ,this subject will show automatically and if he failed any subject of previous semester, this will show automatically like this :
 
-![alt text](https://i.imgur.com/c33Zp6Wl.png "Registration Form")
+![](https://i.imgur.com/c33Zp6W.png | width=640)
 
 *Download Result Form :* When publish result student can download his own result sheet as pdf file, by selecting required year and semester.
 
