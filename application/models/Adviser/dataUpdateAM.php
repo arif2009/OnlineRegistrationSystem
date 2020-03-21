@@ -82,7 +82,7 @@ class DataUpdateAM extends CI_Model{
         }
     }
     function InsertOrUpdateSessionalQuizeAttendance($value, $valueArray){
-        $this->output->enable_profiler(TRUE);
+        //$this->output->enable_profiler(TRUE);
         try {
             //Data insert/update into theory table
             $sql = "INSERT INTO sessional (StudentId, SubjectCode, Quize, Attendance, GPA, GradeLetter)

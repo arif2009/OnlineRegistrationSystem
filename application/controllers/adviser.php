@@ -360,7 +360,7 @@ class Adviser extends CI_Controller{
         }
     }
     function InsertStudentMark(){
-        $this->output->enable_profiler(TRUE);
+        //$this->output->enable_profiler(TRUE);
         $dataUpdateAM = new DataUpdateAM;
         
         $subjectCode = $this->input->post('drpSubject');

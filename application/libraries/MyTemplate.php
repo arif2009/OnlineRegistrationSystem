@@ -2,8 +2,8 @@
 class MyTemplate{
     function Header(){
         $header = '<div class="grid_3">';
-                $image_properties = array('src' => 'images/others/mono.gif',
-                                          'alt' => 'DUET monogram(mono.gif file) not found',
+                $image_properties = array('src' => 'images/others/mono.png',
+                                          'alt' => 'Icon monogram(mono.png file) not found',
                                           'width' => '130',
                                           'height' => '130');
         $header .= img($image_properties);
@@ -11,18 +11,18 @@ class MyTemplate{
         $header .= '<div class="grid_13">';   
         $header .= '<h1>Course Registraton System</h1>';
         $header .= '<h2>(With Result Processing)</h2>';
-        $header .= '<h3>Dhaka University of Engineering & Technology</h3>';       
+        $header .= '<h3>Xyz University of Engineering & Technology</h3>';       
         $header .= '</div>';
         return($header);
     }
     
     function Footer(){
         $footer = '<p>';
-        $footer .= anchor('http://arifur-rahman-sazal.blogspot.com', 'Different Programming Tips', array('target' => '_blunk'));
+        $footer .= anchor('https://arifur-rahman-sazal.blogspot.com', 'Different Programming Tips', array('target' => '_blunk'));
         $footer .= ' | ';
-        $footer .= anchor('http://www.duet.ac.bd', 'DUET', array('target' => '_blunk'));
+        $footer .= anchor('https://arif2009.github.io', 'ARIF', array('target' => '_blunk'));
         $footer .= ' | ';
-        $footer .= anchor('http://arifur-rahman-sazal.blogspot.com/p/blog-page_9.html', 'About Me', array('target' => '_blunk'));
+        $footer .= anchor('https://arif2009.github.io', 'About Me', array('target' => '_blunk'));
         $footer .= '</p>';
         return($footer);
     }

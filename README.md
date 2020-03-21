@@ -51,7 +51,7 @@ Password:123456 </br>
 ---
 *Login form :*
 
-![alt text](http://i.imgur.com/9ZTODuB.jpg "Login form")
+![alt text](https://i.imgur.com/uhBA1yq.png "Login form")
 
 When a user (teacher, register, student) login their ID & Password then it redirect their individual
 destination (which is decided by their ID) .
@@ -59,7 +59,7 @@ destination (which is decided by their ID) .
 ##### Register Section
 *Starting Form :* When authority (register) login then, he'll see the number of all advisers (separated by department) and students (separated by department) like this :
 
-![alt text](http://i.imgur.com/hpkKyx0.jpg "Register summary")
+![alt text](https://i.imgur.com/y0prZIo.png "Register summary")
 
 Here register section can insert a new student, teacher and also can be select adviser for a student or a group of student . When register section insert student and teacher, their password will be auto generated . After inserting information this section can print out password as a pdf file.
 
@@ -71,47 +71,47 @@ Student insertion forms and pdf files look like this :
 
 *Download inrerface form :*
 
-![alt text](http://i.imgur.com/9fZNYyE.jpg "Download inrerface form")
+![alt text](https://i.imgur.com/AUdqIFY.png "Download inrerface form")
 
 *Downloaded pdf file :*
 
-![alt text](http://i.imgur.com/TbReSIV.jpg "Downloaded pdf file")
+![alt text](https://i.imgur.com/zANKY5B.png "Downloaded pdf file")
 
 ##### Adviser Section
 
 *Starting Form :* When adviser login then he'll see all requested student with their registration status like this :
 
-![alt text](http://i.imgur.com/SjgbEt1.jpg "Adviser startup")
+![alt text](https://i.imgur.com/jwWA3B9.png "Adviser startup")
 
 Adviser can check their registration form(by clicking View Details) after checking he can accept or deny.
 
 *View Details Form :*
 
-![alt text](http://i.imgur.com/mqPx30r.jpg "View Details Form")
+![alt text](https://i.imgur.com/C4Bqd86.png "View Details Form")
 
 *Insert or Edit form :* A teacher can insert or edit a student mark by selecting subject criteria like this :
 
-![alt text](http://i.imgur.com/e4eeeqM.jpg "Insert or Edit form for teacher")
+![alt text](https://i.imgur.com/81VUZOP.png "Insert or Edit form for teacher")
 
 ##### Students Section
 
 *Starting Form :* When a student login then he'll see notice that provided by Register Section :
 
-![alt text](http://i.imgur.com/qpWif8I.jpg "Students startup form")
+![alt text](https://i.imgur.com/wb3j3Oz.png "Students startup form")
 
 *Registration Form :* Student can registered his current semester subject ,this subject will show automatically and if he failed any subject of previous semester, this will show automatically like this :
 
-![alt text](http://i.imgur.com/ZqRJBeu.jpg "Registration Form")
+![alt text](https://i.imgur.com/c33Zp6W.png "Registration Form")
 
 *Download Result Form :* When publish result student can download his own result sheet as pdf file, by selecting required year and semester.
 
 *Download inrerface form :*
 
-![alt text](http://i.imgur.com/gE91zIn.jpg "Download inrerface form")
+![alt text](https://i.imgur.com/OlviUDp.png "Download inrerface form")
 
 *Pdf result sheet :*
 
-![alt text](http://i.imgur.com/8ZPBnPU.gif "Pdf result sheet")
+![alt text](https://i.imgur.com/NuJ22tR.png "Pdf result sheet")
 
 #### Author
 Arifur Rahman ( arif.rahman2009@gmail.com )

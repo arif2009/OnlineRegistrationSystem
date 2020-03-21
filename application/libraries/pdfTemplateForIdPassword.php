@@ -7,7 +7,7 @@ class PdfTemplateForIdPassword extends Fpdf{
     function Header(){
         
         $this->SetFont('Arial','B',15);// Arial bold 15
-        $this->Cell(0,10,'Dhaka University of Engineering & Technology, Gazipur',0,2,'C');
+        $this->Cell(0,10,'Xyz University of Engineering & Technology, Gazipur',0,2,'C');
         $this->SetFont('Arial','',13);// Arial normal 13
         $this->Cell(0,8,$this->category,0,2,'C');
         $this->Ln(3);// Line break

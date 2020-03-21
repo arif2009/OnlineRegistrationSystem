@@ -17,8 +17,8 @@ class PdfTemplateForResult extends Fpdf{
     var $year, $semister, $stdId, $deptName,$stdName;
     function Header(){
         $this->SetFont('Arial','B',15);// Arial bold 15
-        $this->Cell(0,10,'Dhaka University of Engineering & Technology, Gazipur',0,1,'C');// Title
-        $this->Image(base_url('images/others/mono.gif'),90,22,22,22);// Logo
+        $this->Cell(0,10,'Xyz University of Engineering & Technology, Gazipur',0,1,'C');// Title
+        $this->Image(base_url('images/others/mono.png'),90,22,22,22);// Logo
         $this->Ln(25);
         
         $this->SetFont('Arial','B',13);
@@ -65,7 +65,7 @@ class PdfTemplateForResult extends Fpdf{
         $this->Cell(60, 4, 'Verified by', 0, 0,'L');$this->cell(40);
         $this->Cell(100, 4, 'Deputy Controller of Examination', 0, 1,'C');
         $this->Cell(60, 4, 'Date:', 0, 0,'L');$this->cell(40);
-        $this->Cell(100, 4, 'Dhaka University of Engineering & Technology, Gazipur', 0, 1,'C');
+        $this->Cell(100, 4, 'Xyz University of Engineering & Technology, Gazipur', 0, 1,'C');
     }
     function GradingSystem(){
         /*$this->Ln(13);
