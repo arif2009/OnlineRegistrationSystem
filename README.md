@@ -59,7 +59,7 @@ destination (which is decided by their ID) .
 ##### Register Section
 *Starting Form :* When authority (register) login then, he'll see the number of all advisers (separated by department) and students (separated by department) like this :
 
-![alt text](https://i.imgur.com/y0prZIo.png "Register summary")
+![alt text](https://i.imgur.com/y0prZIol.png "Register summary")
 
 Here register section can insert a new student, teacher and also can be select adviser for a student or a group of student . When register section insert student and teacher, their password will be auto generated . After inserting information this section can print out password as a pdf file.
 
@@ -71,7 +71,7 @@ Student insertion forms and pdf files look like this :
 
 *Download inrerface form :*
 
-![alt text](https://i.imgur.com/AUdqIFY.png "Download inrerface form")
+![alt text](https://i.imgur.com/AUdqIFYl.png "Download inrerface form")
 
 *Downloaded pdf file :*
 
@@ -81,17 +81,17 @@ Student insertion forms and pdf files look like this :
 
 *Starting Form :* When adviser login then he'll see all requested student with their registration status like this :
 
-![alt text](https://i.imgur.com/jwWA3B9.png "Adviser startup")
+![alt text](https://i.imgur.com/jwWA3B9l.png "Adviser startup")
 
 Adviser can check their registration form(by clicking View Details) after checking he can accept or deny.
 
 *View Details Form :*
 
-![alt text](https://i.imgur.com/C4Bqd86.png "View Details Form")
+![alt text](https://i.imgur.com/C4Bqd86l.png "View Details Form")
 
 *Insert or Edit form :* A teacher can insert or edit a student mark by selecting subject criteria like this :
 
-![alt text](https://i.imgur.com/81VUZOP.png "Insert or Edit form for teacher")
+![alt text](https://i.imgur.com/81VUZOPl.png "Insert or Edit form for teacher")
 
 ##### Students Section
 
