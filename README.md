@@ -111,7 +111,7 @@ Adviser can check their registration form(by clicking View Details) after checki
 
 *Pdf result sheet :*
 
-![alt text](https://i.imgur.com/NuJ22tR.png "Pdf result sheet")
+![alt text](https://i.imgur.com/nw95TcN.png "Pdf result sheet")
 
 #### Author
 Arifur Rahman ( arif.rahman2009@gmail.com )
