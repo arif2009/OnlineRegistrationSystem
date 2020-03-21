@@ -97,7 +97,7 @@ Adviser can check their registration form(by clicking View Details) after checki
 
 *Starting Form :* When a student login then he'll see notice that provided by Register Section :
 
-![alt text](https://i.imgur.com/wb3j3Oz.png "Students startup form")
+![alt text](https://i.imgur.com/wb3j3Oz.png =615 "Students startup form")
 
 *Registration Form :* Student can registered his current semester subject ,this subject will show automatically and if he failed any subject of previous semester, this will show automatically like this :
 

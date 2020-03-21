@@ -228,7 +228,7 @@ class Student extends CI_Controller{
     }
     
     function DownloadResult(){
-        $this->output->enable_profiler(TRUE);
+        //$this->output->enable_profiler(TRUE);
         $dataViewSM = new DataViewSM;
         $dataViewRM = new DataViewRM;
         $year     = $this->input->post('drpYear');
