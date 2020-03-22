@@ -24,7 +24,6 @@ class PdfTemplateForIdPassword extends Fpdf{
     }
     function PageBody($header, $data)
     {
-        $encrypt = new CI_Encrypt;
         // Header
         $cellWidth = array(40,90,60);$i=0;
         foreach($header as $col)
@@ -36,7 +35,7 @@ class PdfTemplateForIdPassword extends Fpdf{
         {
             $i=0;
             foreach($row as $col){
-                if($i==2){$this->Cell($cellWidth[$i++],6,$encrypt->decode ($col),1);}
+                if($i==2){$this->Cell($cellWidth[$i++],6,decrypt($col),1);}
                 else{$this->Cell($cellWidth[$i++],6,$col,1);}
             }
             $this->Ln();

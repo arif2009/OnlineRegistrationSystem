@@ -2,7 +2,7 @@
 class ChangePasswordM extends CI_Model{
     function ChangePassword(){
         $userId = $this->session->userdata('id');
-        $newPassword = $this->encrypt->encode($this->input->post('txtNewPassword'));
+        $newPassword = encrypt($this->input->post('txtNewPassword'));
         $result = $this->db->set('Password', $newPassword)
                        ->where('Id', $userId)
                        ->update('password');

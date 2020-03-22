@@ -13,7 +13,7 @@ class UsersM extends CI_Model{
                           ->get('password');
         if($query->num_rows() > 0){
             $row = $query->result();
-            $dbPassword = $this->encrypt->decode($row[0]->Password);
+            $dbPassword = decrypt($row[0]->Password);
         }else {
             return FALSE;
         }

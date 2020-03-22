@@ -87,7 +87,7 @@ class Register extends CI_Controller{
                     );
                 $data['password'] = array(
                         'Id' => $stdId,
-                        'Password' => $this->encrypt->encode(random_string('alnum', 6))
+                        'Password' => encrypt(random_string('alnum', 6))
                 );
                 $data['completedSemister'] = array(
                         'StudentId'     => $stdId,
@@ -171,7 +171,7 @@ class Register extends CI_Controller{
             );
            $data['password'] = array(
                 'Id' => $this->input->post('txtId'),
-                'Password' => $this->encrypt->encode(random_string('alnum', 6))
+                'Password' => encrypt(random_string('alnum', 6))
            );
             if($this->dataInsertRM->InsertAdviserInformation($data)){
                 $this->InsertAdviser('Information Successfully Added');
