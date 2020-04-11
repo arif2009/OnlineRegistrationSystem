@@ -1,4 +1,4 @@
-##### How to run it your localhost https://youtu.be/pfJzR5EBAwE
+##### How to run this application in your localhost https://youtu.be/pfJzR5EBAwE
 ### Course Registration System (With Result Processing)
 ---
 This system is designed according to [DUET](http://www.duet.ac.bd/) (Dhaka University of Engineering and Technology) course registration and result processing system.  It can manage the Course Registration at the beginning of semester and process the student result at the end of the semester. Student can show his status, download mark sheet after publishing result and also get notification from the authority. Teachers (adviser) can verify his student’s registration status and can accept or deny after verifying students registration.
