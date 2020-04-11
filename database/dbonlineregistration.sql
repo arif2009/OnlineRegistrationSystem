@@ -1,25 +1,27 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
--- http://www.phpmyadmin.net
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Apr 20, 2012 at 09:44 AM
--- Server version: 5.5.16
--- PHP Version: 5.3.8
+-- Host: mysql5025.site4now.net
+-- Generation Time: Apr 10, 2020 at 10:47 PM
+-- Server version: 5.6.47-log
+-- PHP Version: 5.6.27
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dbonlineregistration`
+-- Database: `db_a3d72e_ors`
 --
-CREATE DATABASE `dbonlineregistration` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+CREATE DATABASE IF NOT EXISTS `dbonlineregistration` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `dbonlineregistration`;
 
 -- --------------------------------------------------------
@@ -28,15 +30,12 @@ USE `dbonlineregistration`;
 -- Table structure for table `adviser`
 --
 
-CREATE TABLE IF NOT EXISTS `adviser` (
+CREATE TABLE `adviser` (
   `AdviserId` varchar(6) NOT NULL,
   `AdviserName` varchar(60) NOT NULL,
   `DepartmentId` varchar(3) NOT NULL,
   `ContractNumber` varchar(18) DEFAULT NULL,
-  `Email` varchar(50) NOT NULL,
-  PRIMARY KEY (`AdviserId`),
-  UNIQUE KEY `Email` (`Email`),
-  KEY `AdvDeptFK` (`DepartmentId`)
+  `Email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -55,12 +54,11 @@ INSERT INTO `adviser` (`AdviserId`, `AdviserName`, `DepartmentId`, `ContractNumb
 -- Table structure for table `adviser_image`
 --
 
-CREATE TABLE IF NOT EXISTS `adviser_image` (
+CREATE TABLE `adviser_image` (
   `AdviserId` varchar(6) NOT NULL,
   `Image` longblob,
-  `FileSize` int(10) unsigned DEFAULT NULL,
-  `FileType` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`AdviserId`)
+  `FileSize` int(10) UNSIGNED DEFAULT NULL,
+  `FileType` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -77,7 +75,7 @@ INSERT INTO `adviser_image` (`AdviserId`, `Image`, `FileSize`, `FileType`) VALUE
 -- Table structure for table `completed_semister`
 --
 
-CREATE TABLE IF NOT EXISTS `completed_semister` (
+CREATE TABLE `completed_semister` (
   `StudentId` varchar(6) NOT NULL,
   `FirstYsecondS` varchar(15) NOT NULL,
   `SecondYfirstS` varchar(15) NOT NULL,
@@ -85,8 +83,7 @@ CREATE TABLE IF NOT EXISTS `completed_semister` (
   `ThirdYfirstS` varchar(15) NOT NULL,
   `ThirdYsecondS` varchar(15) NOT NULL,
   `FourthYfirstS` varchar(15) NOT NULL,
-  `FourthYsecondS` varchar(15) NOT NULL,
-  KEY `ComsemStdinfoFK` (`StudentId`)
+  `FourthYsecondS` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -105,13 +102,11 @@ INSERT INTO `completed_semister` (`StudentId`, `FirstYsecondS`, `SecondYfirstS`,
 -- Table structure for table `department`
 --
 
-CREATE TABLE IF NOT EXISTS `department` (
+CREATE TABLE `department` (
   `DepartmentId` varchar(3) NOT NULL,
   `DepartmentName` varchar(35) NOT NULL,
   `FacultyId` varchar(4) NOT NULL,
-  `DegreeAward` varchar(3) NOT NULL,
-  PRIMARY KEY (`DepartmentId`),
-  KEY `DeptFacFK` (`FacultyId`)
+  `DegreeAward` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -126,6 +121,7 @@ INSERT INTO `department` (`DepartmentId`, `DepartmentName`, `FacultyId`, `Degree
 ('E05', 'Electrical & Electronic Engineering', 'FE02', 'yes'),
 ('H09', 'Humanities', 'FM03', 'no'),
 ('M03', 'Mathematics', 'FC01', 'no'),
+('M06', 'Ishaq', 'FE02', 'yes'),
 ('M07', 'Mechanical Engineering', 'FM03', 'yes'),
 ('P04', 'Physics', 'FC01', 'no'),
 ('T08', 'Textile Engineering', 'FM03', 'yes');
@@ -136,14 +132,13 @@ INSERT INTO `department` (`DepartmentId`, `DepartmentName`, `FacultyId`, `Degree
 -- Table structure for table `download`
 --
 
-CREATE TABLE IF NOT EXISTS `download` (
+CREATE TABLE `download` (
   `StudentId` varchar(6) NOT NULL,
   `Year` varchar(3) NOT NULL,
   `Semister` varchar(3) NOT NULL,
   `GPA` float NOT NULL,
   `DownloadStatus` varchar(3) DEFAULT NULL,
-  `CreditPerSemister` float NOT NULL,
-  PRIMARY KEY (`StudentId`,`Year`,`Semister`)
+  `CreditPerSemister` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -152,11 +147,10 @@ CREATE TABLE IF NOT EXISTS `download` (
 -- Table structure for table `faculty`
 --
 
-CREATE TABLE IF NOT EXISTS `faculty` (
+CREATE TABLE `faculty` (
   `FacultyId` varchar(4) NOT NULL,
   `FacultyName` varchar(4) NOT NULL,
-  `Location` varchar(15) DEFAULT NULL,
-  PRIMARY KEY (`FacultyId`)
+  `Location` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -174,7 +168,7 @@ INSERT INTO `faculty` (`FacultyId`, `FacultyName`, `Location`) VALUES
 -- Table structure for table `marks_info`
 --
 
-CREATE TABLE IF NOT EXISTS `marks_info` (
+CREATE TABLE `marks_info` (
   `StudentId` varchar(6) NOT NULL,
   `session` varchar(8) DEFAULT NULL,
   `SubjectCode` varchar(15) NOT NULL,
@@ -183,10 +177,7 @@ CREATE TABLE IF NOT EXISTS `marks_info` (
   `GPA` float DEFAULT '0',
   `GradeLetter` varchar(2) DEFAULT NULL,
   `Cardit` float NOT NULL,
-  `Status` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`StudentId`,`SubjectCode`),
-  KEY `MrkinfoTotsubFK` (`SubjectCode`),
-  KEY `MrkinfoStdinfoFK` (`StudentId`)
+  `Status` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -246,14 +237,13 @@ INSERT INTO `marks_info` (`StudentId`, `session`, `SubjectCode`, `SubjectOfYear`
 -- Table structure for table `notice`
 --
 
-CREATE TABLE IF NOT EXISTS `notice` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `notice` (
+  `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `RegistrationStarted` varchar(3) DEFAULT NULL,
-  `ResultPublish` varchar(3) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+  `ResultPublish` varchar(3) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `notice`
@@ -270,10 +260,9 @@ INSERT INTO `notice` (`id`, `title`, `description`, `RegistrationStarted`, `Resu
 -- Table structure for table `password`
 --
 
-CREATE TABLE IF NOT EXISTS `password` (
+CREATE TABLE `password` (
   `Id` varchar(6) NOT NULL,
-  `Password` text NOT NULL,
-  PRIMARY KEY (`Id`)
+  `Password` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -281,20 +270,20 @@ CREATE TABLE IF NOT EXISTS `password` (
 --
 
 INSERT INTO `password` (`Id`, `Password`) VALUES
-('074001', 'd0Gyc6fAjKhUzAdrL5YtVQw33JmEvPo4cwz7BIHoA8APJWWe8fiah/flrITGwdfGbCdVeaFiUN0S4OH1FHPr4g=='),
-('074004', 'jCAO5AY+XK+cPjvtHPPU2H8UIUV4TyzRByyI8fMMegeEdWXwyB0JWCx7OvLgUAHluplZr1X6VqRELrIjE8djsg=='),
-('074007', 'huY4CgtT9/2wbfifH2ZGhzNUuumBRj/F5SVF8Amw8ioXLhZWT1AopTzpuGYY90ySSNMrrVmsLehKFFAmJoG9bQ=='),
-('074009', 'tYZmSdE/8jziFCcaNFaun0I7Ahs+86ywp4W+UMXR/t93ZbYvy+rDOBuyMobXeZYuoqZI9hGlHgAIBFR3JpEoeA=='),
-('074040', 'sVW3NHUYXCs/255SIa/lIlGLb6/DW4HXt+vvTzTZQbktBUmwclkTozH5ZvjuLoe0ag0Re5Byhzwib6hVUw2MTA=='),
-('074051', '9/QwYOS+DeLFo5NR6PRqZsTrDXOQsgeXylRqyLiw+eaXURyq6Ue2yZTXCzhjvhuOz7+uJKwoissNWL3oqojTOg=='),
-('074052', 'TqTFzqkZEWPSrNCVeI4J/XDWm9FTkW0O/KnwihXcSwUbZ56OzFvxoWfR0/D6gSuxsSWerY+2G3jSgYKlkf151Q=='),
-('074053', 'O8r7mzcR1B34T1ZVrjINXa9VVOcRQ5FzNGa5VT77cc8KUakDoT2TmRPBFn9r+k23gB/uKQ3+fGZKrIqOJUbx4g=='),
-('074057', 'Y1S4W/tnHI4GS/by8fAQ4lQxBVGE2X78H5Kte47aeEwR86FOyGKOQbqMb1seF4MKe9xa00KIwYzp7EWTlKMj0w=='),
-('A00001', '9/QwYOS+DeLFo5NR6PRqZsTrDXOQsgeXylRqyLiw+eaXURyq6Ue2yZTXCzhjvhuOz7+uJKwoissNWL3oqojTOg=='),
-('A00002', '2yfGgroklNSyPD9gs90T/9JhKSXoFawRESFN1zWFcXncAfV/wGLARwVKvhg8DKl6pAST10Di31Y2cb23VTdAZQ=='),
-('A00003', 'GvxyFQlC7aLF2yiRGplOHQEzWRowV1EnpI7JuSQ3By/q9uf3m/5TIzdiHngVsVEeW45bOF2HtQjPqIL/o+mGLA=='),
-('A00004', 'RLEkJfGI1ZqZovXiC9GwOEDN/2/qQewkC7kKzmqSnc5gBpSdjzGwc4Zq1x3H9Vh3OxbTE8nQUVY32w/mnEAoGw=='),
-('R12345', 'rpmjod7KaaSFYQhN0A0LthVpz5FuALleNDy+cZRagwuhcZCGTeHjBx9kL9NkOJsdwWf4Ej2k8Ot2/fkuu9H0+A==');
+('074001', 'EkHomtec/KYwJsjwgaSrDQ=='),
+('074004', 'EkHomtec/KYwJsjwgaSrDQ=='),
+('074007', 'EkHomtec/KYwJsjwgaSrDQ=='),
+('074009', 'EkHomtec/KYwJsjwgaSrDQ=='),
+('074040', 'EkHomtec/KYwJsjwgaSrDQ=='),
+('074051', 'EkHomtec/KYwJsjwgaSrDQ=='),
+('074052', 'EkHomtec/KYwJsjwgaSrDQ=='),
+('074053', 'EkHomtec/KYwJsjwgaSrDQ=='),
+('074057', 'EkHomtec/KYwJsjwgaSrDQ=='),
+('A00001', 'EkHomtec/KYwJsjwgaSrDQ=='),
+('A00002', 'EkHomtec/KYwJsjwgaSrDQ=='),
+('A00003', 'EkHomtec/KYwJsjwgaSrDQ=='),
+('A00004', 'EkHomtec/KYwJsjwgaSrDQ=='),
+('R12345', 'EkHomtec/KYwJsjwgaSrDQ==');
 
 -- --------------------------------------------------------
 
@@ -302,17 +291,14 @@ INSERT INTO `password` (`Id`, `Password`) VALUES
 -- Table structure for table `registration_info`
 --
 
-CREATE TABLE IF NOT EXISTS `registration_info` (
+CREATE TABLE `registration_info` (
   `StudentId` varchar(6) DEFAULT NULL,
   `AdviserId` varchar(6) DEFAULT NULL,
   `RegistrationStatus` varchar(15) DEFAULT NULL,
   `ReceiveNo` varchar(40) NOT NULL,
   `RequiredSubject` varchar(255) DEFAULT NULL,
   `TakenSubject` varchar(255) DEFAULT NULL,
-  `YearSemister` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`ReceiveNo`),
-  KEY `ReginfoStdinfoFK` (`StudentId`),
-  KEY `ReginfoAdvFK` (`AdviserId`)
+  `YearSemister` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -329,7 +315,7 @@ INSERT INTO `registration_info` (`StudentId`, `AdviserId`, `RegistrationStatus`,
 -- Table structure for table `sessional`
 --
 
-CREATE TABLE IF NOT EXISTS `sessional` (
+CREATE TABLE `sessional` (
   `StudentId` varchar(6) NOT NULL,
   `SubjectCode` varchar(15) NOT NULL,
   `Assesment_1` float DEFAULT '0',
@@ -339,10 +325,7 @@ CREATE TABLE IF NOT EXISTS `sessional` (
   `Quize` float DEFAULT '0',
   `Attendance` float DEFAULT '0',
   `GPA` float DEFAULT NULL,
-  `GradeLetter` varchar(2) DEFAULT NULL,
-  PRIMARY KEY (`StudentId`,`SubjectCode`),
-  KEY `SessStdinfoFK` (`StudentId`),
-  KEY `SessTotsubFK` (`SubjectCode`)
+  `GradeLetter` varchar(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -373,12 +356,11 @@ INSERT INTO `sessional` (`StudentId`, `SubjectCode`, `Assesment_1`, `Assesment_2
 -- Table structure for table `student_image`
 --
 
-CREATE TABLE IF NOT EXISTS `student_image` (
+CREATE TABLE `student_image` (
   `StudentId` varchar(6) NOT NULL,
   `Image` longblob,
-  `FileSize` int(10) unsigned DEFAULT NULL,
-  `FileType` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`StudentId`)
+  `FileSize` int(10) UNSIGNED DEFAULT NULL,
+  `FileType` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -397,7 +379,7 @@ INSERT INTO `student_image` (`StudentId`, `Image`, `FileSize`, `FileType`) VALUE
 -- Table structure for table `student_info`
 --
 
-CREATE TABLE IF NOT EXISTS `student_info` (
+CREATE TABLE `student_info` (
   `StudentId` varchar(6) NOT NULL,
   `StudentName` varchar(60) NOT NULL,
   `FathersName` varchar(60) NOT NULL,
@@ -409,11 +391,7 @@ CREATE TABLE IF NOT EXISTS `student_info` (
   `Sex` varchar(6) NOT NULL,
   `DepartmentId` varchar(3) NOT NULL,
   `AdviserId` varchar(6) DEFAULT NULL,
-  `AdmitDate` date NOT NULL,
-  PRIMARY KEY (`StudentId`),
-  UNIQUE KEY `Email` (`Email`),
-  KEY `StdinfoAdvFK` (`AdviserId`),
-  KEY `StdinfoDeptFK` (`DepartmentId`)
+  `AdmitDate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -437,7 +415,7 @@ INSERT INTO `student_info` (`StudentId`, `StudentName`, `FathersName`, `MothersN
 -- Table structure for table `theory`
 --
 
-CREATE TABLE IF NOT EXISTS `theory` (
+CREATE TABLE `theory` (
   `StudentId` varchar(6) NOT NULL,
   `SubjectCode` varchar(15) NOT NULL,
   `ClassTest_1` float DEFAULT '0',
@@ -448,10 +426,7 @@ CREATE TABLE IF NOT EXISTS `theory` (
   `Attendance` float DEFAULT '0',
   `FinalExam` float DEFAULT '0',
   `GPA` float DEFAULT NULL,
-  `GradeLetter` varchar(2) DEFAULT NULL,
-  PRIMARY KEY (`StudentId`,`SubjectCode`),
-  KEY `TheoryStdinfoFK` (`StudentId`),
-  KEY `TheoryTotsubFK` (`SubjectCode`)
+  `GradeLetter` varchar(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -487,15 +462,13 @@ INSERT INTO `theory` (`StudentId`, `SubjectCode`, `ClassTest_1`, `ClassTest_2`, 
 -- Table structure for table `total_subject`
 --
 
-CREATE TABLE IF NOT EXISTS `total_subject` (
+CREATE TABLE `total_subject` (
   `SubjectCode` varchar(15) NOT NULL,
   `SubjectTitle` varchar(60) NOT NULL,
   `DepartmentId` varchar(3) NOT NULL,
   `SubjectOfYear` varchar(3) NOT NULL,
   `SubjectOfSemister` varchar(3) NOT NULL,
-  `Cardit` float NOT NULL,
-  PRIMARY KEY (`SubjectCode`),
-  KEY `TotsubDeptFK` (`DepartmentId`)
+  `Cardit` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -521,6 +494,125 @@ INSERT INTO `total_subject` (`SubjectCode`, `SubjectTitle`, `DepartmentId`, `Sub
 ('Math-241', 'Mathematics-III', 'C06', '2nd', '1st', 4),
 ('Ph-143', 'Physics-II', 'C06', '1st', '2nd', 3),
 ('Ph-144', 'Physics-II Sessional', 'C06', '1st', '2nd', 0.75);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `adviser`
+--
+ALTER TABLE `adviser`
+  ADD PRIMARY KEY (`AdviserId`),
+  ADD UNIQUE KEY `Email` (`Email`),
+  ADD KEY `AdvDeptFK` (`DepartmentId`);
+
+--
+-- Indexes for table `adviser_image`
+--
+ALTER TABLE `adviser_image`
+  ADD PRIMARY KEY (`AdviserId`);
+
+--
+-- Indexes for table `completed_semister`
+--
+ALTER TABLE `completed_semister`
+  ADD KEY `ComsemStdinfoFK` (`StudentId`);
+
+--
+-- Indexes for table `department`
+--
+ALTER TABLE `department`
+  ADD PRIMARY KEY (`DepartmentId`),
+  ADD KEY `DeptFacFK` (`FacultyId`);
+
+--
+-- Indexes for table `download`
+--
+ALTER TABLE `download`
+  ADD PRIMARY KEY (`StudentId`,`Year`,`Semister`);
+
+--
+-- Indexes for table `faculty`
+--
+ALTER TABLE `faculty`
+  ADD PRIMARY KEY (`FacultyId`);
+
+--
+-- Indexes for table `marks_info`
+--
+ALTER TABLE `marks_info`
+  ADD PRIMARY KEY (`StudentId`,`SubjectCode`),
+  ADD KEY `MrkinfoTotsubFK` (`SubjectCode`),
+  ADD KEY `MrkinfoStdinfoFK` (`StudentId`);
+
+--
+-- Indexes for table `notice`
+--
+ALTER TABLE `notice`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `password`
+--
+ALTER TABLE `password`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `registration_info`
+--
+ALTER TABLE `registration_info`
+  ADD PRIMARY KEY (`ReceiveNo`),
+  ADD KEY `ReginfoStdinfoFK` (`StudentId`),
+  ADD KEY `ReginfoAdvFK` (`AdviserId`);
+
+--
+-- Indexes for table `sessional`
+--
+ALTER TABLE `sessional`
+  ADD PRIMARY KEY (`StudentId`,`SubjectCode`),
+  ADD KEY `SessStdinfoFK` (`StudentId`),
+  ADD KEY `SessTotsubFK` (`SubjectCode`);
+
+--
+-- Indexes for table `student_image`
+--
+ALTER TABLE `student_image`
+  ADD PRIMARY KEY (`StudentId`);
+
+--
+-- Indexes for table `student_info`
+--
+ALTER TABLE `student_info`
+  ADD PRIMARY KEY (`StudentId`),
+  ADD UNIQUE KEY `Email` (`Email`),
+  ADD KEY `StdinfoAdvFK` (`AdviserId`),
+  ADD KEY `StdinfoDeptFK` (`DepartmentId`);
+
+--
+-- Indexes for table `theory`
+--
+ALTER TABLE `theory`
+  ADD PRIMARY KEY (`StudentId`,`SubjectCode`),
+  ADD KEY `TheoryStdinfoFK` (`StudentId`),
+  ADD KEY `TheoryTotsubFK` (`SubjectCode`);
+
+--
+-- Indexes for table `total_subject`
+--
+ALTER TABLE `total_subject`
+  ADD PRIMARY KEY (`SubjectCode`),
+  ADD KEY `TotsubDeptFK` (`DepartmentId`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `notice`
+--
+ALTER TABLE `notice`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
@@ -590,6 +682,7 @@ ALTER TABLE `theory`
 --
 ALTER TABLE `total_subject`
   ADD CONSTRAINT `TotsubDeptFK` FOREIGN KEY (`DepartmentId`) REFERENCES `department` (`DepartmentId`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
